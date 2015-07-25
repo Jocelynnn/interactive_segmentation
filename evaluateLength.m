@@ -1,0 +1,12 @@
+image=imread('./pick-seed/75.jpg');
+image_seg=imread('./pick-gt/75.png');
+bw=rgb2gray(image);
+[m,n]=size(bw);
+front=zeros(m,n);
+front(bw==255)=255;
+front_total=sum(image_seg(:)==255);
+disp(front_total);
+[num,length,averageLength]=count('100070.jpg',front,front_total);
+disp(num);
+disp(length);
+disp(averageLength);

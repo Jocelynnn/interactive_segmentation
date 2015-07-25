@@ -1,0 +1,52 @@
+a = [1 3; 2 4; 2 4; 4 4];
+s = [2 4];
+[c, ia, ib] = intersect(a,s,'rows');
+
+
+IDX = [1,2,3;  
+       2,3,1;  
+       1,2,3;  
+       2,3,1;  
+       1,1,1;  
+       1,1,1]; 
+% the superpixel no of each row(must be same row count as IDX)
+IDXValue=[1;
+        2;
+        3;
+        4;
+        5;
+        6];
+uniqueRows = unique(IDX,'rows');
+[m,n]=size(IDX);
+[p,q]=size(uniqueRows);
+% each row contains the superpixel numbers with the same color 
+% max is m
+ rowset=zeros(p,m);
+for i=1:p
+    target=uniqueRow(i,:);
+    for j=1:m
+        if(IDX(j,:)==target))
+            
+        end
+    end
+end
+
+
+a = [2,3,1];  
+b = [1,5,4];  
+[tfa,loca] = ismember(a,uniqueRows,'rows'); 
+[tfb,locb] = ismember(b,uniqueRows,'rows');
+
+A=[1 2 3;2 3 5; 6 7 7;1 2 3; 3 2 1; 4 5 6;7 8 9;6 7 7;7 7 6];
+[m,n]=size(A);%m=9,n=3
+p=zeros(m,2);
+q=1;
+for i=1:m
+for j=i+1:m
+if(A(i,:)==A(j,:))
+p(q ,:)=[i,j];
+q=q+1;
+end
+end
+end
+disp (p)
